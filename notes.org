@@ -1,0 +1,74 @@
+[[http://cs231n.stanford.edu/syllabus.html][CS231n - CNNs for Visual Recognition]]
+
+* [[http://cs231n.stanford.edu/syllabus.html][Notes to read after each lecture]]  
+
+* Lec 1: Intro
+
+* Lec 2: Image classification and the data-driven approach, k-nearest neighbor, Linear classification I
+
+** kNN
+*** Nearest Neighbour Classifier
+**** Algo
+***** Train -> Remember all training images and their labels
+***** Predict -> Predict the label of most similar training image
+**** How to compare? What is the distance metric?
+     + There are many ways to compare. L1 distance (manhattan distance), L2 distance (Euclidean distance), etc. We'll use L1 distance
+       L1 dist = sum(abs(image_from_training_examples-predication_image))
+     + The choice of distance metric is a hyperparameter 
+**** Scalability
+     + How does the time required for classification increase with problem size?
+       -> Linearly :(
+          (CNN is completely opposite. Training is expensive but at test time, the computation happen in constant time)
+
+*** k-Nearest Neighbour Classifier
+    find the k nearest images, have them vote on the label (choice of k is a hyperparameter) 
+
+*** Cross Validation (We would use k-fold CV)
+   + The train-validation split which gives highest accuracy on validation set is considered
+   + Used to get good performance and also selecting hyperparameters such as 
+     choice of distance and value of k (of kNN Classifier)
+
+**
+
+** Summary
+   + Image Classification: We are given a Training set of labeled images,
+     asked to predict labels on test set. Common to report the Accuary
+     of predictions (fraction of correctly predicted images)
+     
+   + We introduced the k-Nearest Neighbour Classifier, which predicts
+     based on nearest images in the training set
+
+   + We saw that the choice of distance and the value of k are hyperparameters
+     that are tuned using a validation set or through cross-validation if the 
+     size of the data is small
+
+   + Once the best set of hyperparameters is chosen, the classifier is evaluated
+     once on the test set, and reported as the performance of kNN on that data
+
+** Linear Classification
+   Wx + b
+   consider m -> no. of classes and n -> length of feature vector
+   W - mXn matrix (here, ith row is an independent classifier for ith class)
+   x - nX1 vector
+   b - mX1 vector
+   
+*** Interpreting a Linear Classifier (what does linear classifier do, in english)
+    My answer:
+    -> In a linear classifier, each row of weights tries to learn some linear pattern (information) 
+       in the data of corresponding class. But data such as images are complex 
+       and it is difficult for the classifier to extract linear information,
+       making it less effective when used with such type of data. 
+       For eg (shown in lecture): consider cifar10 in which each image is of 32X32X3.
+       if the dataset has more red cars, then if we reshape (to 32X32X3) and visualize row 
+       vector of weights (corresponding to that class - cars), then we see somthing red
+       that almost resembles a car. This is beacuse the classifier thinks linearly
+       and concludes that cars are mostly red. 
+       Another eg shown in class is of a horse. if we visualize weight vector (row)
+       corresponding to horse, we see something like 2 faced horse. This is because
+       horse faces to both left and right in different images in cifar10
+       This is where non-linear classifiers such as NN shines
+       cuz intuitively, there might be different weights each independently looking out
+       for left facing horse and right facing horse. Similarly, for the car example,
+       there might be different weights where each independently looks out for different colored cars
+   
+
