@@ -100,7 +100,12 @@
    L2 reg is also know as weight decay
    
 ** Softmax Classifer (Multinomial Logistic Regression)
-   scores = unnormalized log probabilities of the classes
+   scores = unnormalized log probabilities of the classes 
+   (this is just interpretation for better intuition. 
+   scores are not actually unnormalized log probabilities
+   since scores are real valued numbers so you can interpret them
+   however you want. interpreting them as unnormalized log probabilities
+   makes it easier to understand and appreciate softmax)
 
    so, to normalize these we use softmax since exp(log(x)) = x
    i.e exp(log(x))/sum(log(each of x's)) -> x/sum(all x's)
@@ -109,13 +114,9 @@
    How softmax works?
 
     unnormalized log probabilites 
-            |||
              | exp 
-            |||
      unnormalized probabilities
-            |||
              | normalize
-            |||
        probabilities
    -----------------------------------------------------------------
    
@@ -126,4 +127,19 @@
    + (As a sanity check) while implementing, your first loss should be near or 
    rougly in the order of -log(1/n_classes) otherwise something is wrong
 	
-   
+** Summary of GD vs Mini-batch GD
+   GD -> You take accuarate (accurate in terms of direction) steps but each step takes a lot of time since you iterate over all the examples
+   Mini-batch GD -> You take relatively less accuarate steps because we look at a piece of data at a time and not the entire data set. But this makes it fast.
+   Overall, for the same amount of time, no. of steps (for convergence) is more in mini-batch than vanilla GD
+
+** Gradient
+   Gradient is a vector of derivatives
+
+** Summary of Numerical gradients vs Analytic gradients
+   - Numerical gradient: approximate, slow, easy to write
+   - Analytic gradient: exact, fast, error-prone(human error while calculating analytic gradients)
+     In practice: Always use analytic gradient, but check implementation with numerical gradient to check for errors in implementation.
+     This is called gradient check.
+     
+** Next class:
+   + Backprop: an efficient way to compute analytic gradients
