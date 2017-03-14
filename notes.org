@@ -109,9 +109,13 @@
    How softmax works?
 
     unnormalized log probabilites 
+             |
              | exp 
+             |
      unnormalized probabilities
+             |
              | normalize
+             |
      probabilities
    -----------------------------------------------------------------
    
