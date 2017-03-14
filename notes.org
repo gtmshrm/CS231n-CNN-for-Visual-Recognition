@@ -113,11 +113,11 @@
    -----------------------------------------------------------------
    How softmax works?
 
-    unnormalized log probabilites 
+    UNNORMALIZED LOG PROBABILITES 
              | exp 
-     unnormalized probabilities
+     UNNORMALIZED PROBABILITIES
              | normalize
-       probabilities
+       PROBABILITIES
    -----------------------------------------------------------------
    
    loss = -log(softmax(correct class score))
