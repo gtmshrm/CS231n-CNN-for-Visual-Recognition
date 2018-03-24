@@ -68,4 +68,16 @@ Each row of W and b is an independent classifier for corresponding class.
 
 ![7](/lectures/img/lec_2/7.png)
 
+As shown above, we reshape each row of weight matrix W into the dimensions of original input image (only for visualization). We can visualize each row of W as a 32x32x3 image. Lets consider the weights which corresponds to class 'plane' in the image above. We observe that the blue channel has lots of positive weights. When these positive weights of blue channel see blue sections in the input image, they interact with them to give a good contribution to the final score for class 'plane'. In red and green channels, we'll find weights which are close to zero and even negative. Weights for a class can also be called as a template for that class. The reason for weights of class 'plane' to have high blue channel values is because it might have seen a lot of blue sections on the training images.
 
+Similarly, the weights for class 'frog' contain yellow green part in the center and brownish parts on the sides. When these parts see similar patterns of color in the input image, the dot product becomes high which gives a good contribution to the final score.
+
+The weights for class 'car' look a bit weird because training set had images of cars with many different orientations. The weights of class 'horse' can be seen as double faced horse with the left face being darker because training set had more left faced horse images. Also, the color of horse in the weight vector seems to be brown but horses can be of any color. This is because CIFAR-10 has many brown horses.
+
+*Trying to accomodate for both left and right faced horses in a single weight vector and bias of the classifier towards brown horses shows the lack of power in linear classifier. Of-course CNNs and NNs in general have different weight vectors corresponding to each orientation of the horse.*
+
+**Another interpretation of a linear classifier**
+
+Using linear classifier on CIFAR-10 dataset, each class is linearly separated across the 3072 dimensional pixel space. This can be seen below.
+
+![8](/lectures/img/lec_2/8.png)
