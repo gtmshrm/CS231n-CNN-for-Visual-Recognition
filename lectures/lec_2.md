@@ -55,3 +55,15 @@ Cross-validation is expensive and hence, it is used prefarably for small dataset
 * Computational performance at test time is terrible
 * Distance metrics on level of whole images can be unintuitive. See example below.
 ![5](/lectures/img/lec_2/5.png)
+
+## Linear Classification
+
+![6](/lectures/img/lec_2/6.png)
+
+Each row of W and b is an independent classifier for corresponding class.
+
+### Interpreting a Linear Classifier
+
+![7](/lectures/img/lec_2/7.png)
+
+
