@@ -38,9 +38,9 @@ Some portion of the training set (say 16%) is considered as validation set.
 
 In cross-validation, data is divided into folds. In the following example we'll find K. We call also find distance metric (which is another hyperparameter) by the exact same technique which we use to find K.
 
-**Eg**: Say 5 folds in this case. Lets name the 5 folds as F1, F2, F3, F4 and F5.
+Eg: Say 5 folds in this case. Lets name the 5 folds as F1, F2, F3, F4 and F5.
 
-**For K=1**
+For K=1:
 
 At first, consider F5 to be the validation set. Now the accuracy of the algorithm is calculated on F5. Let's call this accuracy as A5. Then F4 is considersed as validation set and accuracy on F4 is calculated i.e A4. Similarly, A3, A2 and A1 are calculated. In short, every fold gets to be the validation set. Now the average of A1, A2, ..., A5 is calculated. Let's call this average accuracy as A.
 
