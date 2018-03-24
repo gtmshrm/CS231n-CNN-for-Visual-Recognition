@@ -2,9 +2,7 @@
 
 ## Nearest Neighbour Classifier
 
-**Algorithm**:
-
-To train, Remember all training images and their labels. To predict, Predict the label of most similar training image.
+To train, remember all training images and their labels. To predict, find the label of most similar training image.
 
 **How to compare? What is the distance metric?**
 
@@ -30,7 +28,7 @@ There are 2 techniques to find hyperparameters for any ML algorithm:
 
 #### Validation
 
-Some portion of the training set (say 16%) is considered as validation set.
+Some portion of the training set (say 16%) is considered as validation set. The hyperparameters which perform best on this validation set are selected.
 
 #### Cross-Validation
 
@@ -46,3 +44,12 @@ At first, consider F5 to be the validation set. Now the accuracy of the algorith
 
 The above mentioned process is repeated for odd values of K (3, 5, ...) and for each K, we get A, A1, A2, ..., A5 where A is the average of A1, A2, ..., A5. All of these values are plotted as shown below. The line passes through A (mean accuracy) for odd values of K. The vertical bars indicate std dev for A1, A2, ..., A5 for each K.
 ![4](/lectures/img/lec_2/4.png)
+
+Now, the K which gives highest mean accuracy obtained through cross-validation is selected. It is indicated by the vertical red line in the above graph.
+
+Similarly, cross-validation can be used to find the distance metric. This is how we can find hyperparameters for any ML algorithm.
+
+Cross-validation is expensive and hence, it is used prefarably for small datasets. Use validation instead of cross-validation for medium or big datasets.
+
+**K-NN is never used on images**
+![5](/lectures/img/lec_2/5.png)
