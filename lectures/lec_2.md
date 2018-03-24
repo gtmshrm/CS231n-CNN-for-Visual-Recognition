@@ -58,6 +58,8 @@ Cross-validation is expensive and hence, it is used prefarably for small dataset
 
 ## Linear Classification
 
+Example of an image with 4 pixels and 3 classes (cat/dog/ship)
+
 ![6](/lectures/img/lec_2/6.png)
 
 Each row of W and b is an independent classifier for corresponding class.
