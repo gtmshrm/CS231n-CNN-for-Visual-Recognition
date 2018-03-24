@@ -2,10 +2,25 @@
 
 ## Nearest Neighbour Classifier
 
-**Algo**
+**Algorithm**:
 
 To train, Remember all training images and their labels. To predict, Predict the label of most similar training image.
 
 **How to compare? What is the distance metric?**
 
-There are many ways to compare: L1 distance: Manhattan distance, L2 distance: Euclidean distance, etc. We'll use L1 distance. The choice of distance metric is a hyperparameter. ![Screen Shot 2016-08-07 at 10.08.44 PM](/lectures/img/lec_2/Screen%20Shot%202018-03-23%20at%205.33.55%20AM.png)
+There are many ways to compare: L1 distance: Manhattan distance, L2 distance: Euclidean distance, etc. We'll use L1 distance. The choice of distance metric is a hyperparameter. ![1](/lectures/img/lec_2/1.png)
+
+## K - Nearest Neighbour Classifier
+
+Find k similar examples from the training set with respect to test image and pick the class which has max vote
+
+**Hyperparameters**: K, Distance metric
+
+**Comparing K NN and NN**
+![2](/lectures/img/lec_2/2.png)
+
+### Finding hyperparameters
+
+**Find hyperparameters which are K and distance metric in this algorithm**
+
+* Cross-validation
