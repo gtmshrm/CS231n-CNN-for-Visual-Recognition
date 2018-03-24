@@ -8,4 +8,4 @@ To train, Remember all training images and their labels. To predict, Predict the
 
 **How to compare? What is the distance metric?**
 
-There are many ways to compare: L1 distance: Manhattan distance, L2 distance: Euclidean distance, etc. We'll use L1 distance. The choice of distance metric is a hyperparameter.[Screen Shot 2016-08-07 at 10.08.44 PM](/img/lec_2/Screen%20Shot%202018-03-23%20at%205.33.55%20AM.png)
+There are many ways to compare: L1 distance: Manhattan distance, L2 distance: Euclidean distance, etc. We'll use L1 distance. The choice of distance metric is a hyperparameter.[Screen Shot 2016-08-07 at 10.08.44 PM](/lectures/img/lec_2/Screen%20Shot%202018-03-23%20at%205.33.55%20AM.png)
