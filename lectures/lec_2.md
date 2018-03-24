@@ -28,14 +28,14 @@ In K-NN, hyperparameters are K and distance metric.
 
 There are 2 techniques to find hyperparameters for any ML algorithm:
 
-* **Validation**
+#### Validation
 
 Some portion of the training set (say 16%) is considered as validation set.
 
-* **Cross-Validation**
+#### Cross-Validation
 
-Some portion of the training set (say 16%) is considered as validation set.
 ![3](/lectures/img/lec_2/3.png)
+
 In cross-validation, data is divided into folds. Eg: Say 5 folds in this case.
 Lets name the 5 folds as F1, F2, F3, F4 and F5.
 At first, consider F5 to be the validation set. **NOTE**: In cross-validation, validation set is just for the name sake. Here validation set is simply not used.
