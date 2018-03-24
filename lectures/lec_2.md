@@ -52,4 +52,6 @@ Similarly, cross-validation can be used to find the distance metric. This is how
 Cross-validation is expensive and hence, it is used prefarably for small datasets. Use validation instead of cross-validation for medium or big datasets.
 
 **K-NN is never used on images**
+* Computational performance at test time is terrible
+* Distance metrics on level of whole images can be unintuitive. See example below.
 ![5](/lectures/img/lec_2/5.png)
