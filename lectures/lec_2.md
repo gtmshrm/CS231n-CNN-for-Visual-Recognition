@@ -78,6 +78,6 @@ The weights for class 'car' look a bit weird because training set had images of 
 
 **Another interpretation of a linear classifier**
 
-Using linear classifier on CIFAR-10 dataset, each class is linearly separated across the 3072 dimensional pixel space. This can be seen below.
+Using linear classifier on CIFAR-10 dataset, each class is linearly separated across the 3072 dimensional pixel space. This can be interpreted as shown below.
 
 ![8](/lectures/img/lec_2/8.png)
