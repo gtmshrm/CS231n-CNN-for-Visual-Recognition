@@ -27,8 +27,13 @@ For first image, correct class is *cat* and incorrect classes are *dog* and *fro
 *Q3*.What if the sum was over all the classes (including *j=y_i*)?
 *Ans*: In *j=y_i*, it add *1* in our loss. *Adding a constant to the loss everytime would be useless*.
 
-*Q4*. Can we used
+*Q4*. What if we use
 
 ![4](/lectures/img/lec_3/4.png)
 
-*Ans*:
+*Ans*: It is known as the *squared hinge loss*. The type of loss we use is simply a hyperparameter and we end up using the one which works better for our dataset. In most cases, hinge loss outperforms squared hinge loss.
+
+*Q5*. Usually at initialization, *W* are small numbers, so all *s ~= 0* . What is the loss?
+*Ans*: *Loss ~= N-1* where *N* is the number of classes.
+
+*Sanity check for hinge loss implementation*: As suggested by *Q5*, the loss at initialization should be around *N-1* where *N* is the number of classes.
