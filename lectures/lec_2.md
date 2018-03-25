@@ -1,5 +1,7 @@
 # Image Classification Pipeline
 
+*Winter 2016*
+
 ## Nearest Neighbour Classifier
 
 To train, remember all training images and their labels. To predict, find the label of most similar training image.

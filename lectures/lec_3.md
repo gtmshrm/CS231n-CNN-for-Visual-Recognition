@@ -1,7 +1,9 @@
 # Linear Classification and Optimization
 
+*Winter 2016*
+
 **Challenges in Visual Recognition**
-[1](/lectures/img/lec_3/1.png)
+![1](/lectures/img/lec_3/1.png)
 
 **Goal**
 
@@ -36,4 +38,10 @@ For first image, correct class is *cat* and incorrect classes are *dog* and *fro
 *Q5*. Usually at initialization, *W* are small numbers, so all *s ~= 0* . What is the loss?
 *Ans*: *Loss ~= N-1* where *N* is the number of classes.
 
-*Sanity check for hinge loss implementation*: As suggested by *Q5*, the loss at initialization should be around *N-1* where *N* is the number of classes.
+**Sanity check for hinge loss implementation**: As suggested by *Q5*, the loss at initialization should be around *N-1* where *N* is the number of classes.
+
+**Full training loss**
+
+It is the mean of losses on all the examples
+
+![5](/lectures/img/lec_3/5.png)
