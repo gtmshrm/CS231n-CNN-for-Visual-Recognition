@@ -27,5 +27,8 @@ For first image, correct class is *cat* and incorrect classes are *dog* and *fro
 *Q3*.What if the sum was over all the classes (including *j=y_i*)?
 *Ans*: In *j=y_i*, it add *1* in our loss. *Adding a constant to the loss everytime would be useless*.
 
-*Q4*. Can we used ![4](/lectures/img/lec_3/4.png)
+*Q4*. Can we used
+
+![4](/lectures/img/lec_3/4.png)
+
 *Ans*:
