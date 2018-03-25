@@ -74,7 +74,7 @@ Similarly, the weights for class 'frog' contain yellow green part in the center 
 
 The weights for class 'car' look a bit weird because training set had images of cars with many different orientations. The weights of class 'horse' can be seen as double faced horse with the left face being darker because training set had more left faced horse images. Also, the color of horse in the weight vector seems to be brown but horses can be of any color. This is because CIFAR-10 has many brown horses.
 
-*Trying to accomodate for both left and right faced horses in a single weight vector and bias of the classifier towards brown horses shows the lack of power in linear classifier. Of-course CNNs and NNs in general have different weight vectors corresponding to each orientation of the horse.*
+*Trying to accomodate for both left and right faced horses in a single weight vector and bias of the classifier towards brown horses shows the lack of power in linear classifier. Of-course CNNs and Neural Nets in general have different weight vectors corresponding to each orientation of the horse.*
 
 **Another interpretation of a linear classifier**
 
