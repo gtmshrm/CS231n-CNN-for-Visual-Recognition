@@ -74,3 +74,32 @@ Now we have to parts of the loss function. In our new loss function, main part o
 *Ans*: It'll favor *w2* because it has better *statistical distribution of weights across the vector* i.e weights are spread throughtout the vector. Intuitively that means the classifier will take into account all the features of the input vector as compared to *w1* which only takes the first element of input vector into account.
 
 ## Softmax Classifier (Multinomial Logistic Regression)
+![10](/lectures/img/lec_3/10.png)
+
+*Q*. In softmax classifier, we treat scores of classifier as *unnormalized log probabilities*. why?
+*Ans*: It's simply because in softmax, we take *exponential* (i.e *e^x*) of scores. One of the ways to justify the usage of *e^x* as the key component of softmax function is to consider that scores are *log* values. Scores are just arbitrary values, so there is no interpretation for what value can be considered big or small, since we can get big or small scores based on different *W*s. Technically, scores cannot be considered as probabilities because their range is *[-infinity, +infinity]*. Calling them *unnormalized log probabilities* is just a way of interpreting the scores, nothing else.
+
+*Q*. **Sanity Check for implementation:** usually at initialization *W* is so small that *s ~= 0*. What is the loss?
+*Ans*: *-log(1/N)* where *N* is the number of classes. So, for sanity check of implementation, the loss must be around *-log(1/N)*
+
+*The loss function for softmax classifer is called cross-entropy loss.*
+
+**Overview**
+![11](/lectures/img/lec_3/11.png)
+
+## Softmax vs. SVM
+
+**Consider the following**
+![12](/lectures/img/lec_3/12.png)
+
+*Ans:* If we take a datapoint and jiggle a bit, the SVM loss will remain the same but the cross-entropy loss will change a lot. This shows that SVM loss is not robust to variance of scores because it is only concerned with whether the safety margin criteria is being satisfied or not. Mathematically, this means in SVM loss (after jiggling datapoints), that gradients of loss function are almost all zeroes. But in the case of softmax, these gradients will be big. This means that softmax classifier will optimize weights at every step, making it far more robust than SVM.
+
+**We use Softmax for the following reasons:**
+* In softmax, a score (given by *Wx + b*) of 0.000001 is much better than 0.000000001.
+* Gradients of loss function are mathematically *cleaner* and more *interpretable*.
+* Softmax takes into account all the classes during training (whereas SVM takes the approach of separating each class from the rest).
+* Softmax outputs a probability distribution over the classes.
+
+*In practise, both Softmax classifier & SVM give identical results. So, there is nothing such as 'better' when we compare both of these.*
+
+[Linear Classification Loss Visualization](http://vision.stanford.edu/teaching/cs231n-demos/linear-classify/)
