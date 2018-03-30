@@ -45,3 +45,32 @@ For first image, correct class is *cat* and incorrect classes are *dog* and *fro
 It is the mean of losses on all the examples
 
 ![5](/lectures/img/lec_3/5.png)
+
+**Q. But there is a bug in our loss (show below). Suppose that we found W such that L = 0 (ignoring bias term for simplicity). Is W unique?**
+
+![6](/lectures/img/lec_3/6.png)
+
+**Ans**: *No*. Because we can scale *W* by some factor and still get the same *0* as loss. See the example below in which we scale the weights by 2 and still get *0* loss.
+
+![7](/lectures/img/lec_3/7.png)
+
+Now we can have multiple (optimized) values of *W* which give the same loss. There is a subspace of *W*'s which work equally well.
+
+*This is not a nice property to have! This is why regularization comes into picture...*
+
+### Weight Regularization
+
+It is nice to have an unique *W*. Regularization function makes sure *W* looks nice! Here nice means *W should be unique and should not overfit the training set by keeping the weights small*.
+
+![8](/lectures/img/lec_3/8.png)
+
+Now we have to parts of the loss function. In our new loss function, main part of it is trying to find optimal value for *W* and the regularization part is trying to keep *W* nice. So the main part and the regularization part fight with each other during training because we want to simultaneously achieve both these objectives: optimize *W* and also keep it nice! Even if this makes the training error worse, it will perform better on test set.
+
+**L2 Regularization: Motivation**
+
+![9](/lectures/img/lec_3/9.png)
+
+*Q*. Which weight will L2 regularization favor in the above problem? *w1* or *w2*?
+*Ans*: It'll favor *w2* because it has better *statistical distribution of weights across the vector* i.e weights are spread throughtout the vector. Intuitively that means the classifier will take into account all the features of the input vector as compared to *w1* which only takes the first element of input vector into account.
+
+## Softmax Classifier (Multinomial Logistic Regression)
