@@ -92,14 +92,16 @@ Now we have to parts of the loss function. In our new loss function, main part o
 **Consider the following**
 ![12](/lectures/img/lec_3/12.png)
 
-*Ans:* If we take a datapoint and jiggle a bit, the SVM loss will remain the same but the cross-entropy loss will change a lot. This shows that SVM loss is not robust to variance of scores because it is only concerned with whether the safety margin criteria is being satisfied or not. Mathematically, this means in SVM loss (after jiggling datapoints), that gradients of loss function are almost all zeroes. But in the case of softmax, these gradients will be big. This means that softmax classifier will optimize weights at every step, making it far more robust than SVM.
+*Ans:* If we take a datapoint and jiggle a bit, the SVM loss will remain the same but the cross-entropy loss will change a lot. This shows that SVM loss is not robust to variance of scores because it is only concerned with whether the safety margin criteria is being satisfied or not. Mathematically, this means in SVM loss (after jiggling datapoints), that gradient of loss function is almost all zeroes. But in the case of softmax, gradient will be big. This means that softmax classifier will optimize weights at every step, making it far more robust than SVM.
 
 **We use Softmax for the following reasons:**
 * In softmax, a score (given by *Wx + b*) of 0.000001 is much better than 0.000000001.
-* Gradients of loss function are mathematically *cleaner* and more *interpretable*.
+* Gradient of loss function is mathematically *cleaner* and more *interpretable*.
 * Softmax takes into account all the classes during training (whereas SVM takes the approach of separating each class from the rest).
 * Softmax outputs a probability distribution over the classes.
 
 *In practise, both Softmax classifier & SVM give identical results. So, there is nothing such as 'better' when we compare both of these.*
 
 [Linear Classification Loss Visualization](http://vision.stanford.edu/teaching/cs231n-demos/linear-classify/)
+
+## Optimization
