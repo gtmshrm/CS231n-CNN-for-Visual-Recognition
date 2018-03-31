@@ -105,3 +105,24 @@ Now we have to parts of the loss function. In our new loss function, main part o
 [Linear Classification Loss Visualization](http://vision.stanford.edu/teaching/cs231n-demos/linear-classify/)
 
 ## Optimization
+![13](/lectures/img/lec_3/13.png)
+
+**Strategies**
+* Random Search: A very bad solution
+* Numerical Gradient: approx, slow and easy to write
+* Analytic Gradient: exact, fast and error-prone (use gradient check)
+
+*Learning rate and regularization parameter are the biggest parameters that we need to tune.*
+
+### Vanilla Gradient Descent
+![14](/lectures/img/lec_3/14.png)
+
+### Mini-batch Gradient Descent
+![15](/lectures/img/lec_3/15.png)
+
+*Batch size is a hyperparameter that is easy to choose. Just select whichever fits well in your GPU!*
+
+**Example of optimization progress while training a neural network**
+![16](/lectures/img/lec_3/16.png)
+
+*This noise during the loss decay is because of mini-batch gradient descent. Some batches are good and some might be bad. Also, each loss value is on that particular mini-batch. In vanilla gradient descent there is no noise, it's just a smooth line.*
