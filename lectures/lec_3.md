@@ -98,7 +98,7 @@ Now we have to parts of the loss function. In our new loss function, main part o
 * In softmax, a score (given by *Wx + b*) of 0.000001 is much better than 0.000000001.
 * Gradient of loss function is mathematically *cleaner* and more *interpretable*.
 * Softmax takes into account all the classes during training (whereas SVM takes the approach of separating each class from the rest).
-* Softmax outputs a probability distribution over the classes.
+* Softmax outputs a discrete probability distribution over the classes.
 
 *In practise, both Softmax classifier & SVM give identical results. So, there is nothing such as 'better' when we compare both of these.*
 
